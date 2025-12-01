@@ -1,0 +1,163 @@
+<%- include('../partials/head', { title: 'À propos' }) %>
+<body>
+    <%- include('../partials/nav', { activePage: 'about' }) %>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero-about">
+            <div class="container">
+                <h1 class="fade-in">À propos de moi</h1>
+                <p class="fade-in delay-1">Découvrez mon parcours, mes compétences et ma passion pour le développement web</p>
+            </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image fade-in">
+                        <img src="/images/profile.jpg" alt="[Votre Nom]" class="profile-img">
+                    </div>
+                    <div class="about-content fade-in delay-1">
+                        <h2>Qui suis-je ?</h2>
+                        <p>Je m'appelle [Votre Nom] et je suis un développeur web passionné par la création d'expériences numériques exceptionnelles. Avec plusieurs années d'expérience dans le développement web, j'ai eu l'opportunité de travailler sur une variété de projets stimulants qui ont renforcé mes compétences et ma passion pour ce domaine.</p>
+                        <p>Ma philosophie de travail repose sur l'innovation, la qualité et l'attention aux détails. Je m'efforce de créer des solutions qui non seulement répondent aux besoins de mes clients, mais qui dépassent également leurs attentes.</p>
+                        
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <span class="info-label">Nom :</span>
+                                <span class="info-value">[Votre Nom]</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email :</span>
+                                <span class="info-value">votre@email.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Téléphone :</span>
+                                <span class="info-value">+33 6 12 34 56 78</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Localisation :</span>
+                                <span class="info-value">Ville, Pays</span>
+                            </div>
+                        </div>
+                        
+                        <a href="/contact" class="btn mt-4">Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mes Compétences</h2>
+                    <p>Un aperçu de mes compétences techniques et professionnelles</p>
+                </div>
+                
+                <div class="skills-container">
+                    <% skills.forEach(skill => { %>
+                        <div class="skill fade-in">
+                            <h3><%= skill.name %></h3>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="<%= skill.level %>"></div>
+                            </div>
+                            <span class="skill-percent"><%= skill.level %>%</span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parcours -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mon Parcours</h2>
+                    <p>Mon expérience professionnelle et ma formation</p>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Expérience 1 -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2021 - Présent</div>
+                        <div class="timeline-content">
+                            <h3>Développeur Full Stack</h3>
+                            <h4>Nom de l'entreprise</h4>
+                            <p>Développement et maintenance d'applications web avec des technologies modernes comme React, Node.js et MongoDB. Gestion de projets et collaboration avec une équipe de développeurs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Expérience 2 -->
+                    <div class="timeline-item fade-in delay-1">
+                        <div class="timeline-date">2019 - 2021</div>
+                        <div class="timeline-content">
+                            <h3>Développeur Front-end</h3>
+                            <h4>Autre entreprise</h4>
+                            <p>Création d'interfaces utilisateur réactives et accessibles. Intégration de maquettes et optimisation des performances.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Formation -->
+                    <div class="timeline-item fade-in delay-2">
+                        <div class="timeline-date">2016 - 2019</div>
+                        <div class="timeline-content">
+                            <h3>Diplôme en Développement Web</h3>
+                            <h4>Nom de l'école/université</h4>
+                            <p>Formation intensive en développement web couvrant les technologies front-end et back-end, les bases de données et les bonnes pratiques de développement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pourquoi me choisir -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pourquoi me choisir ?</h2>
+                    <p>Ce qui fait la différence dans mon travail</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Code Propre</h3>
+                        <p>Je m'engage à écrire un code propre, bien documenté et facile à maintenir, en suivant les meilleures pratiques du secteur.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in delay-1">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Design Réactif</h3>
+                        <p>Je crée des sites web qui s'adaptent parfaitement à tous les appareils, des ordinateurs de bureau aux smartphones.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in delay-2">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Performance</h3>
+                        <p>J'optimise chaque projet pour des temps de chargement rapides et une expérience utilisateur fluide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="section cta-section">
+            <div class="container text-center">
+                <h2 class="fade-in">Prêt à concrétiser votre projet ?</h2>
+                <p class="fade-in delay-1">Je suis là pour vous aider à donner vie à vos idées. Contactez-moi dès aujourd'hui pour discuter de votre projet.</p>
+                <a href="/contact" class="btn btn-light fade-in delay-2">Me contacter</a>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

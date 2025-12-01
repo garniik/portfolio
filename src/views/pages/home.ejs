@@ -1,0 +1,149 @@
+<%- include('../partials/head', { title: 'Accueil' }) %>
+<body>
+    <%- include('../partials/nav', { activePage: 'home' }) %>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="fade-in">Bonjour, je suis <span class="highlight">[Votre Nom]</span></h1>
+                    <p class="fade-in delay-1">Développeur Web Full Stack passionné par la création d'expériences numériques exceptionnelles</p>
+                    <div class="cta-buttons fade-in delay-2">
+                        <a href="/projects" class="btn">Voir mes projets</a>
+                        <a href="/contact" class="btn btn-outline">Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- À propos (Section courte) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>À propos de moi</h2>
+                </div>
+                <div class="about-short">
+                    <div class="about-content fade-in">
+                        <p>Je suis un développeur passionné par la création de solutions web innovantes et performantes. Avec une expertise en développement front-end et back-end, je m'efforce de créer des expériences utilisateur exceptionnelles.</p>
+                        <a href="/about" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Derniers Projets -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mes Derniers Projets</h2>
+                    <p>Découvrez une sélection de mes réalisations récentes</p>
+                </div>
+                <div class="projects-grid">
+                    <!-- Projet 1 -->
+                    <div class="project-card fade-in">
+                        <img src="/images/project1.jpg" alt="Projet 1" class="project-image">
+                        <div class="project-info">
+                            <h3>Application Web Moderne</h3>
+                            <p>Une application web complète avec authentification et base de données.</p>
+                            <div class="technologies">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <a href="#" class="btn">Voir le projet</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 2 -->
+                    <div class="project-card fade-in delay-1">
+                        <img src="/images/project2.jpg" alt="Projet 2" class="project-image">
+                        <div class="project-info">
+                            <h3>Site E-commerce</h3>
+                            <p>Une plateforme e-commerce avec système de paiement intégré.</p>
+                            <div class="technologies">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>Stripe</span>
+                            </div>
+                            <a href="#" class="btn">Voir le projet</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 3 -->
+                    <div class="project-card fade-in delay-2">
+                        <img src="/images/project3.jpg" alt="Projet 3" class="project-image">
+                        <div class="project-info">
+                            <h3>Application Mobile</h3>
+                            <p>Une application mobile multiplateforme pour la gestion de tâches.</p>
+                            <div class="technologies">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Redux</span>
+                            </div>
+                            <a href="#" class="btn">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4 fade-in delay-3">
+                    <a href="/projects" class="btn">Voir tous les projets</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences clés -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mes Compétences</h2>
+                    <p>Technologies et outils que j'utilise au quotidien</p>
+                </div>
+                <div class="skills-container">
+                    <div class="skill fade-in">
+                        <i class="fas fa-code skill-icon"></i>
+                        <h3>Développement Front-end</h3>
+                        <p>Création d'interfaces utilisateur réactives et modernes.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill fade-in delay-1">
+                        <i class="fas fa-server skill-icon"></i>
+                        <h3>Développement Back-end</h3>
+                        <p>Conception et développement d'API robustes et sécurisées.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill fade-in delay-2">
+                        <i class="fas fa-mobile-alt skill-icon"></i>
+                        <h3>Développement Mobile</h3>
+                        <p>Applications mobiles natives et multiplateformes.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Travaillons ensemble</h2>
+                    <p>N'hésitez pas à me contacter pour discuter de votre projet</p>
+                </div>
+                <div class="contact-cta text-center fade-in">
+                    <p>Vous avez un projet en tête ou souhaitez en savoir plus sur mon travail ? Je serais ravi d'échanger avec vous.</p>
+                    <a href="/contact" class="btn btn-primary mt-3">Me contacter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

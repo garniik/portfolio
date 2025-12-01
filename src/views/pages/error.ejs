@@ -1,0 +1,23 @@
+<%- include('../partials/head', { title }) %>
+<body class="error-page">
+    <%- include('../partials/nav') %>
+    
+    <main>
+        <section class="error-section">
+            <div class="container text-center">
+                <div class="error-content">
+                    <h1 class="error-code">404</h1>
+                    <h2 class="error-title">Page non trouvée</h2>
+                    <p class="error-message"><%= message || 'La page que vous recherchez semble introuvable.' %></p>
+                    <div class="error-actions">
+                        <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+                        <a href="/contact" class="btn btn-outline">Contactez-moi</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

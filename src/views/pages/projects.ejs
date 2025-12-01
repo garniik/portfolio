@@ -1,0 +1,167 @@
+<%- include('../partials/head', { title: 'Mes Projets' }) %>
+<body>
+    <%- include('../partials/nav', { activePage: 'projects' }) %>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero-projects">
+            <div class="container">
+                <h1 class="fade-in">Mes Projets</h1>
+                <p class="fade-in delay-1">Découvrez une sélection de mes réalisations et cas d'études</p>
+            </div>
+        </section>
+
+        <!-- Filtres de projets -->
+        <section class="section">
+            <div class="container">
+                <div class="filters fade-in">
+                    <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                    <button class="filter-btn" data-filter="web">Sites Web</button>
+                    <button class="filter-btn" data-filter="app">Applications</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grille des projets -->
+        <section class="section pt-0">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Projet 1 -->
+                    <div class="project-card fade-in" data-category="web">
+                        <div class="project-image-container">
+                            <img src="/images/project1.jpg" alt="Projet 1" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-view">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Application Web Moderne</h3>
+                            <p>Une application web complète avec authentification et base de données.</p>
+                            <div class="technologies">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 -->
+                    <div class="project-card fade-in delay-1" data-category="app">
+                        <div class="project-image-container">
+                            <img src="/images/project2.jpg" alt="Projet 2" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-view">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Site E-commerce</h3>
+                            <p>Une plateforme e-commerce avec système de paiement intégré.</p>
+                            <div class="technologies">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 -->
+                    <div class="project-card fade-in delay-2" data-category="design">
+                        <div class="project-image-container">
+                            <img src="/images/project3.jpg" alt="Projet 3" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-view">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Application Mobile</h3>
+                            <p>Une application mobile multiplateforme pour la gestion de tâches.</p>
+                            <div class="technologies">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Redux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 4 -->
+                    <div class="project-card fade-in" data-category="web">
+                        <div class="project-image-container">
+                            <img src="/images/project4.jpg" alt="Projet 4" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-view">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio d'Artiste</h3>
+                            <p>Un portfolio en ligne pour un artiste contemporain avec galerie interactive.</p>
+                            <div class="technologies">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 5 -->
+                    <div class="project-card fade-in delay-1" data-category="app">
+                        <div class="project-image-container">
+                            <img src="/images/project5.jpg" alt="Projet 5" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-view">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Application Météo</h3>
+                            <p>Application météo en temps réel avec prévisions sur 7 jours.</p>
+                            <div class="technologies">
+                                <span>React</span>
+                                <span>API Météo</span>
+                                <span>Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 6 -->
+                    <div class="project-card fade-in delay-2" data-category="design">
+                        <div class="project-image-container">
+                            <img src="/images/project6.jpg" alt="Projet 6" class="project-image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-view">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Identité Visuelle</h3>
+                            <p>Création d'une identité visuelle complète pour une marque de café.</p>
+                            <div class="technologies">
+                                <span>Adobe Illustrator</span>
+                                <span>Photoshop</span>
+                                <span>Branding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination fade-in">
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link">Suivant &raquo;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-section">
+            <div class="container text-center">
+                <h2 class="fade-in">Vous avez un projet en tête ?</h2>
+                <p class="fade-in delay-1">Je serais ravi de discuter de votre idée et de voir comment je peux vous aider à la concrétiser.</p>
+                <a href="/contact" class="btn btn-light fade-in delay-2">Discutons de votre projet</a>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
