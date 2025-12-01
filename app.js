@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Servir les fichiers statiques
 app.use(express.static(path.join(__dirname, "src/public")));
-app.use(express.static(path.join(__dirname, "src/views"))); // Important pour servir les vues
+app.use(express.static(path.join(__dirname, "src/views"))); 
 
 // Routes
 app.use("/", mainRoutes);
