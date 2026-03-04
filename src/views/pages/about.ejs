@@ -60,11 +60,13 @@
                 <div class="skills-container">
                     <% skills.forEach(skill => { %>
                         <div class="skill fade-in">
-                            <h3><%= skill.name %></h3>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="<%= skill.level %>"></div>
+                            <div class="skill-header">
+                                <h3><%= skill.name %></h3>
+                                <div class="skill-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <span class="skill-percent"><%= skill.level %>%</span>
+                            <p class="skill-description"><%= skill.description %></p>
                         </div>
                     <% }); %>
                 </div>

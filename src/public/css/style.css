@@ -189,26 +189,33 @@ body {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  border-left: 4px solid #3498db;
 }
 .skills-container .skill:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
-.skills-container .skill h3 {
+.skills-container .skill .skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
+}
+.skills-container .skill h3 {
+  margin: 0;
   color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
-.skills-container .skill .skill-bar {
-  height: 8px;
-  background: #eee;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 1rem;
+.skills-container .skill .skill-icon {
+  color: #27ae60;
+  font-size: 1.2rem;
 }
-.skills-container .skill .skill-bar .skill-level {
-  height: 100%;
-  background: #3498db;
-  border-radius: 4px;
+.skills-container .skill .skill-description {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .projects-grid {

@@ -40,16 +40,16 @@ const mainController = {
             title: 'À propos',
             activePage: 'about',
             skills: [
-                { name: 'HTML/CSS', level: 95 },
-                { name: 'JavaScript', level: 90 },
-                { name: 'React', level: 85 },
-                { name: 'Node.js', level: 85 },
-                { name: 'Vue.js', level: 80 },
-                { name: 'MongoDB', level: 80 },
-                { name: 'Express', level: 85 },
-                { name: 'Git', level: 90 },
-                { name: 'Responsive Design', level: 95 },
-                { name: 'UI/UX Design', level: 75 }
+                { name: 'HTML/CSS', description: 'Maîtrise avancée du HTML5 et CSS3, incluant Flexbox, Grid et animations' },
+                { name: 'JavaScript', description: 'Solide connaissance du JavaScript ES6+, programmation asynchrone et DOM manipulation' },
+                { name: 'React', description: 'Développement d\'applications React avec hooks, state management et routing' },
+                { name: 'Node.js', description: 'Création d\'API RESTful et applications backend avec Node.js et npm' },
+                { name: 'Vue.js', description: 'Développement de composants Vue.js et intégration avec des APIs' },
+                { name: 'MongoDB', description: 'Conception de schémas et requêtes MongoDB pour applications web' },
+                { name: 'Express', description: 'Framework Express.js pour serveurs backend et middleware' },
+                { name: 'Git', description: 'Version control avec Git, GitHub et workflows collaboratifs' },
+                { name: 'Responsive Design', description: 'Design adaptatif pour tous les appareils et tailles d\'écran' },
+                { name: 'UI/UX Design', description: 'Principes de design d\'interface et expérience utilisateur' }
             ],
             experiences: [
                 {
