@@ -11,6 +11,7 @@ router.get('/', mainController.home);
 router.get('/about', mainController.about);
 router.get('/projects', mainController.projects);
 router.get('/projects/:id', mainController.projectDetails);
+router.get('/competences', mainController.competences);
 router.get('/contact', mainController.contact);
 router.post('/contact', mainController.handleContact);
 

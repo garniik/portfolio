@@ -160,6 +160,14 @@ const mainController = {
         });
     },
 
+    // Page Compétences
+    competences: (req, res) => {
+        res.render('pages/competences', {
+            title: 'Compétences BUT',
+            activePage: 'competences'
+        });
+    },
+
     // Page Détails d'un projet
     projectDetails: (req, res) => {
         const projectId = parseInt(req.params.id);
