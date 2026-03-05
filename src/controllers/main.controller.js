@@ -87,9 +87,12 @@ const mainController = {
 
     // Page Projets
     projects: (req, res) => {
+        
+        
         res.render('pages/projects', {
             title: 'Mes Projets',
-            activePage: 'projects'
+            activePage: 'projects',
+            projects
         });
     },
 
@@ -101,12 +104,73 @@ const mainController = {
         });
     },
 
+    // Page Détails d'un projet
+    projectDetails: (req, res) => {
+        const projectId = parseInt(req.params.id);
+        const projects = [
+            {
+                id: 1,
+                title: 'Application Web Moderne',
+                description: 'Une application web complète avec authentification et base de données.',
+                longDescription: 'Ce projet est une application web complète développée avec une stack MERN (MongoDB, Express, React, Node.js). Elle comprend un système d\'authentification sécurisé, une API RESTful, et une interface utilisateur réactive. L\'application permet aux utilisateurs de gérer leurs tâches quotidiennes, de collaborer avec d\'autres utilisateurs et de suivre leur productivité à travers des tableaux de bord interactifs.',
+                technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT', 'Redux'],
+                images: ['project1-1.jpg', 'project1-2.jpg', 'project1-3.jpg'],
+                link: '#',
+                github: '#',
+                category: 'web',
+                date: 'Janvier 2023',
+                client: 'Client Privé',
+                role: 'Développeur Full Stack'
+            },
+            // ... autres projets
+        ];
+
+        const project = projects.find(p => p.id === projectId);
+
+        if (!project) {
+            return res.status(404).render('pages/error', {
+                title: 'Projet non trouvé',
+                message: 'Le projet que vous recherchez n\'existe pas ou a été déplacé.'
+            });
+        }
+
+        res.render('pages/project-details', {
+            title: project.title,
+            activePage: 'projects',
+            project
+        });
+    },
+
     // Page Contact
     contact: (req, res) => {
         res.render('pages/contact', {
             title: 'Contact',
             activePage: 'contact',
+            success: req.query.success,
+            error: req.query.error
         });
+    },
+
+    // Traitement du formulaire de contact
+    handleContact: async (req, res) => {
+        try {
+            const { name, email, subject, message } = req.body;
+            
+            // Ici, vous pourriez ajouter la logique pour envoyer un email
+            // avec les données du formulaire en utilisant Nodemailer
+            console.log('Nouveau message de contact:');
+            console.log('Nom:', name);
+            console.log('Email:', email);
+            console.log('Sujet:', subject);
+            console.log('Message:', message);
+            
+            // Rediriger vers la page de contact avec un message de succès
+            res.redirect('/contact?success=true');
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi du message:', error);
+            // Rediriger vers la page de contact avec un message d'erreur
+            res.redirect('/contact?error=true');
+        }
     },
 
     // Gestion des erreurs 404
