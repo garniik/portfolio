@@ -24,6 +24,9 @@
   --radius:      12px;
   --radius-lg:   24px;
   --max-width:   1200px;
+  --wip-amber:       #f59e0b;
+  --wip-amber-light: #fffbeb;
+  --wip-amber-dark:  #d97706;
 }
 
 /* ── Reset ── */
@@ -73,6 +76,175 @@ body {
   border-color: var(--coral-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255,107,71,.35);
+}
+/* ── Badge "En cours" ── */
+.badge-wip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  background: var(--wip-amber-light);
+  color: var(--wip-amber-dark);
+  border: 1.5px solid rgba(245,158,11,.3);
+  padding: .2rem .65rem;
+  border-radius: 50px;
+  font-size: .73rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+  width: fit-content;
+}
+.badge-wip::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--wip-amber);
+  border-radius: 50%;
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .4; transform: scale(.7); }
+}
+
+/* ── Carte WIP ── */
+.project-card.wip {
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--white), var(--white)) padding-box,
+    linear-gradient(135deg, var(--wip-amber) 0%, var(--coral) 100%) border-box;
+}
+.project-card.wip::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 52px 52px 0;
+  border-color: transparent var(--wip-amber) transparent transparent;
+  z-index: 10;
+  border-radius: 0 var(--radius-lg) 0 0;
+}
+.project-card.wip::after {
+  content: '🔧';
+  position: absolute;
+  top: 6px; right: 7px;
+  font-size: 1rem;
+  z-index: 11;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.2));
+}
+.project-card.wip .project-image-container img {
+  filter: grayscale(35%) brightness(.9);
+  transition: filter .4s ease, transform .5s ease;
+}
+.project-card.wip:hover .project-image-container img {
+  filter: grayscale(15%) brightness(.95);
+  transform: scale(1.04);
+}
+.project-card.wip .project-overlay {
+  background: rgba(26,39,68,.75);
+  flex-direction: column;
+  gap: .75rem;
+}
+.project-card.wip .project-info {
+  border-top: 1px dashed rgba(245,158,11,.35);
+  background: linear-gradient(to bottom, rgba(255,251,235,.35), transparent);
+}
+.project-card.wip .technologies span {
+  background: var(--wip-amber-light);
+  color: var(--wip-amber-dark);
+  border: 1px solid rgba(245,158,11,.2);
+}
+
+/* ── Barre de progression sur l'image ── */
+.wip-progress-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: rgba(0,0,0,.25);
+  z-index: 5;
+}
+.wip-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--wip-amber), var(--coral));
+  width: 40%;
+  position: relative;
+  border-radius: 0 2px 2px 0;
+}
+.wip-progress-fill::after {
+  content: '';
+  position: absolute;
+  right: -2px; top: 50%;
+  transform: translateY(-50%);
+  width: 8px; height: 8px;
+  background: var(--white);
+  border: 2px solid var(--coral);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,107,71,.6);
+}
+
+/* ── Texte overlay WIP ── */
+.wip-overlay-text {
+  color: rgba(255,255,255,.85);
+  font-size: .82rem;
+  text-align: center;
+  letter-spacing: .03em;
+}
+.btn-wip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: transparent;
+  color: var(--wip-amber);
+  padding: .45rem 1.1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: .82rem;
+  border: 1.5px solid var(--wip-amber);
+  letter-spacing: .03em;
+}
+
+/* ── Footer avancement ── */
+.wip-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: .75rem;
+  border-top: 1px solid rgba(245,158,11,.2);
+}
+.wip-percent {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--wip-amber-dark);
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  white-space: nowrap;
+}
+.wip-percent span {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--wip-amber);
+}
+.mini-bar {
+  flex: 1;
+  margin-left: .75rem;
+  height: 4px;
+  background: var(--blue-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mini-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--wip-amber), var(--coral));
+  border-radius: 3px;
+  width: 40%;
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .6; }
 }
 .btn-outline {
   background: transparent;
