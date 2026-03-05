@@ -80,14 +80,75 @@ const mainController = {
         name: 'Travail en équipe', 
         description: 'Réalisation de projets collaboratifs durant le BUT et participation à des hackathons comme la Nuit de l’Info.' 
     }
-],
+            ]
             
         });
     },
 
     // Page Projets
     projects: (req, res) => {
-        
+        const projects = [
+            {
+                id: 1,
+                title: 'Application Web Moderne',
+                description: 'Une application web complète avec authentification et base de données.',
+                technologies: ['React', 'Node.js', 'MongoDB'],
+                image: 'project1.jpg',
+                link: '#',
+                category: 'web',
+                date: 'Janvier 2023'
+            },
+            {
+                id: 2,
+                title: 'Site E-commerce',
+                description: 'Une plateforme e-commerce avec système de paiement intégré.',
+                technologies: ['Vue.js', 'Express', 'Stripe'],
+                image: 'project2.jpg',
+                link: '#',
+                category: 'web',
+                date: 'Novembre 2022'
+            },
+            {
+                id: 3,
+                title: 'Application Mobile',
+                description: 'Une application mobile multiplateforme pour la gestion de tâches.',
+                technologies: ['React Native', 'Firebase', 'Redux'],
+                image: 'project3.jpg',
+                link: '#',
+                category: 'app',
+                date: 'Août 2022'
+            },
+            {
+                id: 4,
+                title: 'Portfolio d\'Artiste',
+                description: 'Un portfolio en ligne pour un artiste contemporain avec galerie interactive.',
+                technologies: ['HTML/CSS', 'JavaScript', 'GSAP'],
+                image: 'project4.jpg',
+                link: '#',
+                category: 'web',
+                date: 'Mai 2022'
+            },
+            {
+                id: 5,
+                title: 'Application Météo',
+                description: 'Application météo en temps réel avec prévisions sur 7 jours.',
+                technologies: ['React', 'API Météo', 'Chart.js'],
+                image: 'project5.jpg',
+                link: '#',
+                category: 'app',
+                date: 'Février 2022'
+            },
+            {
+                id: 6,
+                title: 'Identité Visuelle',
+                description: 'Création d\'une identité visuelle complète pour une marque de café.',
+                technologies: ['Adobe Illustrator', 'Photoshop', 'Branding'],
+                image: 'project6.jpg',
+                link: '#',
+                category: 'design',
+                date: 'Décembre 2021'
+            }
+        ];
         
         res.render('pages/projects', {
             title: 'Mes Projets',
