@@ -1155,7 +1155,345 @@ body {
   border-top: 1px solid rgba(255,255,255,.07);
 }
 .footer .footer-bottom p { color: rgba(255,255,255,.35); font-size: .85rem; }
+.hero-competences {
+  min-height: 38vh;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-competences::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,71,.12) 0%, transparent 70%);
+  top: -150px; right: -100px;
+  pointer-events: none;
+}
+.hero-competences .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-competences h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+.hero-competences p {
+  color: rgba(255,255,255,.72);
+  font-size: 1.1rem;
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,107,71,.18);
+  color: var(--coral);
+  border: 1px solid rgba(255,107,71,.35);
+  padding: .28rem .9rem;
+  border-radius: 50px;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
 
+/* ── Intro ── */
+.comp-intro { padding: 3.5rem 0; }
+.comp-intro-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 3rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--blue-light);
+}
+.comp-intro-text {
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.comp-intro-text strong { color: var(--blue); }
+.comp-badges {
+  display: flex;
+  gap: .85rem;
+  flex-shrink: 0;
+}
+.comp-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  text-decoration: none;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: all .25s ease;
+}
+.comp-badge-code {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.comp-badge-label {
+  font-size: .73rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.comp-badge--c1 {
+  background: rgba(255,107,71,.08);
+  border-color: rgba(255,107,71,.25);
+  color: var(--coral-dark);
+}
+.comp-badge--c1:hover { background: var(--coral); color: var(--white); border-color: var(--coral); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,107,71,.3); }
+.comp-badge--c2 {
+  background: rgba(26,39,68,.06);
+  border-color: rgba(26,39,68,.2);
+  color: var(--blue-mid);
+}
+.comp-badge--c2:hover { background: var(--blue); color: var(--white); border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,39,68,.3); }
+.comp-badge--c6 {
+  background: rgba(16,185,129,.08);
+  border-color: rgba(16,185,129,.25);
+  color: #065f46;
+}
+.comp-badge--c6:hover { background: #10b981; color: var(--white); border-color: #10b981; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(16,185,129,.3); }
+
+/* ── Section compétence ── */
+.comp-section { scroll-margin-top: 80px; }
+
+.comp-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem 4rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+.comp-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.comp-number {
+  width: 72px; height: 72px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.comp-number--c1 { background: var(--coral); color: var(--white); }
+.comp-number--c2 { background: var(--blue); color: var(--white); }
+.comp-number--c6 { background: #10b981; color: var(--white); }
+
+.comp-ue {
+  font-size: .73rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: .25rem;
+}
+.comp-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  color: var(--blue);
+  margin-bottom: .2rem;
+  line-height: 1.15;
+}
+.comp-subtitle {
+  color: var(--text-muted);
+  font-size: .9rem;
+  font-style: italic;
+}
+.comp-desc {
+  color: var(--text-muted);
+  font-size: .97rem;
+  line-height: 1.8;
+  padding-top: .5rem;
+  border-left: 3px solid var(--blue-light);
+  padding-left: 1.5rem;
+  align-self: center;
+}
+
+/* ── Apprentissages critiques ── */
+.ac-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.2rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--blue-light);
+}
+.ac-item {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .88rem;
+  color: var(--text-muted);
+  min-width: 200px;
+}
+.ac-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ac-dot--c1 { background: var(--coral); }
+.ac-dot--c2 { background: var(--blue-mid); }
+.ac-dot--c6 { background: #10b981; }
+
+/* ── Grille projets compétence ── */
+.comp-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Carte projet remplie */
+.comp-project-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.comp-project-card:not(.comp-project-card--placeholder):hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.comp-project-img {
+  position: relative;
+  height: 175px;
+  overflow: hidden;
+}
+.comp-project-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+  display: block;
+}
+.comp-project-card:hover .comp-project-img img { transform: scale(1.05); }
+.comp-project-link {
+  position: absolute;
+  bottom: .75rem; right: .75rem;
+  background: var(--coral);
+  color: var(--white);
+  padding: .3rem .9rem;
+  border-radius: 50px;
+  font-size: .78rem;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.comp-project-card:hover .comp-project-link { opacity: 1; }
+.comp-project-body {
+  padding: 1.2rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.comp-project-body h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--blue);
+  margin-bottom: .35rem;
+}
+.comp-project-body p {
+  color: var(--text-muted);
+  font-size: .88rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: .85rem;
+}
+.comp-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.comp-project-tags span {
+  background: var(--blue-light);
+  color: var(--blue-mid);
+  padding: .18rem .65rem;
+  border-radius: 50px;
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+/* Carte placeholder */
+.comp-project-card--placeholder {
+  border: 2px dashed var(--blue-light);
+  background: transparent;
+  box-shadow: none;
+  min-height: 175px;
+}
+.placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  height: 100%;
+  min-height: 175px;
+  color: var(--text-muted);
+  opacity: .5;
+  transition: opacity .2s;
+  padding: 2rem;
+}
+.comp-project-card--placeholder:hover .placeholder-inner { opacity: .85; }
+.placeholder-icon {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--coral);
+  opacity: .6;
+}
+.placeholder-inner p {
+  font-size: .85rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Séparateur décoratif ── */
+.comp-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--coral), transparent);
+  opacity: .25;
+  margin: 0 10%;
+}
+.comp-divider--right {
+  background: linear-gradient(90deg, transparent, var(--blue-mid), transparent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .comp-intro-inner { flex-direction: column; }
+  .comp-badges { justify-content: center; }
+  .comp-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .comp-desc { border-left: none; padding-left: 0; border-top: 3px solid var(--blue-light); padding-top: 1rem; }
+}
+@media (max-width: 600px) {
+  .comp-intro-inner { padding: 1.75rem; }
+  .hero-competences h1 { font-size: 2.2rem; }
+  .comp-title { font-size: 1.75rem; }
+  .comp-projects-grid { grid-template-columns: 1fr; }
+}
 /* ── Animations ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(28px); }
